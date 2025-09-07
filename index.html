@@ -1,0 +1,1574 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جامعۃ الحسن - Jamia Tul Hassan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Gulzar:wght@400;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a5e2c; /* Deep Islamic green */
+            --secondary-color: #f5f5f0; /* Creamy off-white */
+            --accent-color: #d4a72a; /* Gold accent */
+            --text-color: #333;
+            --light-text: #fff;
+            --dark-green: #0d3b1e;
+            --transition-speed: 0.4s;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Gulzar', 'Amiri', serif;
+            color: var(--text-color);
+            background-color: var(--secondary-color);
+            overflow-x: hidden;
+            line-height: 1.8;
+            transition: all 0.3s ease;
+        }
+        
+/* Language Toggle - Adjusted Position */
+.language-toggle {
+    position: fixed;
+    top: 70px; /* Navbar ke neeche approx. */
+    right: 25px;
+    z-index: 1000;
+    display: flex;
+    gap: 8px;
+    background: rgba(255,255,255,0.9);
+    padding: 8px 14px;
+    border-radius: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    font-size: 16px;
+   }
+    html[lang="ur"] .contact-item p,
+    html[lang="ar"] .contact-item p {
+    direction: ltr;
+    unicode-bidi: bidi-override;
+   }
+  /* Mobile view */
+  @media (max-width: 600px) {
+    .language-toggle {
+        top: 60px;
+        right: 15px;
+        font-size: 13px;
+        padding: 6px 10px;
+        gap: 6px;
+    }
+}
+  
+        .language-btn {
+            background: transparent;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+            padding: 6px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all var(--transition-speed) ease;
+            font-family: 'Amiri', sans-serif;
+            font-size: 14px;
+        }
+        
+        .language-btn.active {
+            background: var(--primary-color);
+            color: white;
+        }
+        
+        .language-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://i.pinimg.com/736x/04/08/da/0408da49dfa495d395947c6acdef505e.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--light-text);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-content {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1.2s ease forwards;
+            animation-delay: 0.3s;
+            max-width: 900px;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .logo {
+            width: 120px;
+            height: 120px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 25px;
+            border: 3px solid var(--accent-color);
+            animation: pulse 3s infinite ease-in-out;
+            backdrop-filter: blur(5px);
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 15px rgba(212, 175, 55, 0);
+            }
+        }
+        
+        .logo i {
+            font-size: 3.5rem;
+            color: var(--accent-color);
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header-content p {
+            font-size: 1.3rem;
+            margin: 0 auto 30px;
+            max-width: 700px;
+            line-height: 1.6;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--text-color);
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all var(--transition-speed) ease;
+            border: 2px solid var(--accent-color);
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .cta-button:hover {
+            background-color: transparent;
+            color: var(--accent-color);
+            transform: translateY(-5px) scale(1.03);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(26, 94, 44, 0.95);
+            z-index: 999;
+            transition: all var(--transition-speed) ease;
+            backdrop-filter: blur(5px);
+        }
+        
+        nav.scrolled {
+            background-color: var(--dark-green);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .nav-logo {
+            color: var(--light-text);
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .nav-logo i {
+            color: var(--accent-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: var(--light-text);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all var(--transition-speed) ease;
+            position: relative;
+            padding: 5px 0;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: width var(--transition-speed) ease;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--light-text);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all var(--transition-speed) ease;
+        }
+        
+        .mobile-menu-btn:hover {
+            color: var(--accent-color);
+            transform: rotate(90deg);
+        }
+        
+        /* Sections */
+        section {
+            padding: 100px 5%;
+            position: relative;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.3rem;
+            color: var(--primary-color);
+            display: inline-block;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-color);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            transition: all var(--transition-speed) ease;
+        }
+        
+        .about-image:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 1s ease;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Programs Section */
+        .programs-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .program-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all var(--transition-speed) ease;
+            position: relative;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .program-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+        
+        .program-image {
+            height: 220px;
+            overflow: hidden;
+        }
+        
+        .program-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1s ease;
+        }
+        
+        .program-card:hover .program-image img {
+            transform: scale(1.1);
+        }
+        
+        .program-content {
+            padding: 25px;
+        }
+        
+        .program-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            color: var(--primary-color);
+        }
+        
+        .program-content p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        .program-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--primary-color);
+            font-weight: bold;
+            text-decoration: none;
+            transition: all var(--transition-speed) ease;
+            padding: 8px 0;
+        }
+        
+        .program-link:hover {
+            color: var(--accent-color);
+            transform: translateX(5px);
+        }
+        
+        .program-link i {
+            margin-left: 8px;
+            transition: all var(--transition-speed) ease;
+        }
+        
+        .program-link:hover i {
+            transform: translateX(5px);
+        }
+        
+        /* Features Section */
+        .features-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all var(--transition-speed) ease;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(26, 94, 44, 0.1);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 20px;
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            transition: all var(--transition-speed) ease;
+        }
+        
+        .feature-card:hover .feature-icon {
+            background-color: var(--primary-color);
+            color: white;
+            transform: rotateY(180deg);
+        }
+        
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .feature-card p {
+            color: #666;
+        }
+        
+        /* Gallery Section */
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 50px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            height: 250px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: all var(--transition-speed) ease;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(26, 94, 44, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity var(--transition-speed) ease;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        .gallery-overlay i {
+            color: white;
+            font-size: 2.5rem;
+            transform: scale(0.8);
+            transition: all var(--transition-speed) ease;
+        }
+        
+        .gallery-item:hover .gallery-overlay i {
+            transform: scale(1);
+        }
+        
+        /* Contact Section */
+        .contact-container {
+            display: flex;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .contact-details {
+            margin-bottom: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        .contact-container .language-content.urdu {
+     direction: rtl;
+    text-align: right;
+        }
+     .contact-container .language-content.arabic {
+    direction: rtl;
+      text-align: right;
+       }
+        
+        .contact-item i {
+            width: 45px;
+            height: 45px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        
+        .contact-item div p {
+            color: #555;
+        }
+        
+        .social-links {
+            margin-top: 40px;
+        }
+        
+        .social-links h4 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-icons a {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.1rem;
+            transition: all var(--transition-speed) ease;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-5px);
+        }
+        
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            transition: all var(--transition-speed) ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(26, 94, 44, 0.1);
+        }
+        
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 14px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all var(--transition-speed) ease;
+            font-size: 1rem;
+            width: 100%;
+            box-shadow: 0 4px 15px rgba(26, 94, 44, 0.2);
+        }
+        
+        .submit-btn:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(26, 94, 44, 0.3);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-green);
+            color: white;
+            padding: 70px 5% 30px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-color);
+            bottom: -8px;
+            left: 0;
+            border-radius: 2px;
+        }
+        
+        .footer-col p {
+            margin-bottom: 20px;
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: all var(--transition-speed) ease;
+            display: inline-block;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent-color);
+            transform: translateX(5px);
+        }
+        
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .footer-contact-item i {
+            color: var(--accent-color);
+            margin-right: 10px;
+            margin-top: 3px;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .footer-social a {
+            color: white;
+            font-size: 1.1rem;
+            transition: all var(--transition-speed) ease;
+            width: 35px;
+            height: 35px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .footer-social a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-5px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all var(--transition-speed) ease;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 99;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-5px);
+        }
+        
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .fade-in.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .header-content p {
+                font-size: 1.2rem;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                width: 80%;
+                height: calc(100vh - 70px);
+                background-color: var(--dark-green);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 40px;
+                transition: all var(--transition-speed) ease;
+                backdrop-filter: blur(10px);
+            }
+            
+            .nav-links.active {
+                right: 0;
+            }
+            
+            .nav-links li {
+                margin: 20px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .logo {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .logo i {
+                font-size: 2.8rem;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-image {
+                margin-top: 40px;
+            }
+            
+            .programs-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .header-content p {
+                font-size: 1.1rem;
+            }
+            
+            .cta-button {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+            
+            section {
+                padding: 80px 5%;
+            }
+            
+            .section-title h2 {
+                font-size: 1.6rem;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* RTL Styles */
+        body[dir="rtl"] {
+            text-align: right;
+        }
+        
+        body[dir="rtl"] .nav-links {
+            padding-right: 0;
+        }
+        
+        body[dir="rtl"] .nav-links a::after {
+            left: auto;
+            right: 0;
+        }
+        
+        body[dir="rtl"] .program-link i {
+            margin-left: 0;
+            margin-right: 8px;
+        }
+        
+        body[dir="rtl"] .footer-links a:hover {
+            transform: translateX(-5px);
+        }
+        
+        body[dir="rtl"] .contact-item i {
+            margin-right: 0;
+            margin-left: 15px;
+        }
+        
+        body[dir="rtl"] .footer-contact-item i {
+            margin-right: 0;
+            margin-left: 10px;
+        }
+        
+        /* Language Content */
+        .language-content {
+            display: none;
+        }
+        
+        .language-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Toggle -->
+    <div class="language-toggle">
+        <button class="language-btn active" id="english-btn" data-lang="english">English</button>
+        <button class="language-btn" id="urdu-btn" data-lang="urdu">اردو</button>
+        <button class="language-btn" id="arabic-btn" data-lang="arabic">العربية</button>
+    </div>
+    
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo"><i class="fas fa-mosque"></i> <span class="language-content english active">Jamia Tul Hassan</span><span class="language-content urdu">جامعۃ الحسن</span><span class="language-content arabic">جامعة الحسن</span></a>
+            <button class="mobile-menu-btn" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home" class="language-content english active">Home</a><a href="#home" class="language-content urdu">ہوم</a><a href="#home" class="language-content arabic">الرئيسية</a></li>
+                <li><a href="#about" class="language-content english active">About</a><a href="#about" class="language-content urdu">تعارف</a><a href="#about" class="language-content arabic">عن المدرسة</a></li>
+                <li><a href="#programs" class="language-content english active">Programs</a><a href="#programs" class="language-content urdu">پروگرامز</a><a href="#programs" class="language-content arabic">البرامج</a></li>
+                <li><a href="#features" class="language-content english active">Features</a><a href="#features" class="language-content urdu">خصوصیات</a><a href="#features" class="language-content arabic">المميزات</a></li>
+                <li><a href="#gallery" class="language-content english active">Gallery</a><a href="#gallery" class="language-content urdu">گیلری</a><a href="#gallery" class="language-content arabic">معرض الصور</a></li>
+                <li><a href="#contact" class="language-content english active">Contact</a><a href="#contact" class="language-content urdu">رابطہ</a><a href="#contact" class="language-content arabic">اتصل بنا</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Header -->
+    <header id="home">
+        <div class="header-content">
+            <div class="logo">
+                <i class="fas fa-mosque"></i>
+            </div>
+            <h1 class="language-content english active">Jamia Tul Hassan</h1>
+            <h1 class="language-content urdu">جامعۃ الحسن</h1>
+            <h1 class="language-content arabic">جامعة الحسن</h1>
+            
+            <p class="language-content english active">An Islamic Educational Institute for Hifz-e-Quran & Alim-e-Deen Courses</p>
+            <p class="language-content urdu">حفظ قرآن اور عالم دین کی تعلیم کا ایک معیاری ادارہ</p>
+            <p class="language-content arabic">معهد إسلامي لتحفيظ القرآن الكريم وعلوم الدين</p>
+            
+            <a href="#contact" class="cta-button language-content english active">Admission Now</a>
+            <a href="#contact" class="cta-button language-content urdu">داخلہ کروائیں</a>
+            <a href="#contact" class="cta-button language-content arabic">التسجيل الآن</a>
+        </div>
+    </header>
+    
+    <!-- About Section -->
+    <section id="about" class="fade-in">
+        <div class="section-title">
+            <h2 class="language-content english active">About Us</h2>
+            <h2 class="language-content urdu">ہمارے بارے میں</h2>
+            <h2 class="language-content arabic">معلومات عنا</h2>
+        </div>
+        <div class="about-content">
+            <div class="about-text">
+                <h3 class="language-content english active">Welcome to Jamia Tul Hassan</h3>
+                <h3 class="language-content urdu">جامعۃ الحسن میں خوش آمدید</h3>
+                <h3 class="language-content arabic">مرحبا بكم في جامعة الحسن</h3>
+                
+                <p class="language-content english active">Jamia Tul Hassan is a renowned Islamic educational institution dedicated to preserving and teaching the Holy Quran and Islamic sciences. Established in 2015, our madrasa has been serving the Muslim community with excellence in Islamic education.</p>
+                <p class="language-content urdu">جامعۃ الحسن ایک معروف اسلامی تعلیمی ادارہ ہے جو قرآن پاک اور اسلامی علوم کے تحفظ اور تعلیم کے لیے وقف ہے۔ 2015 میں قائم ہونے والی ہماری مدرسہ اسلامی تعلیم میں عمدگی کے ساتھ مسلم کمیونٹی کی خدمت کر رہی ہے۔</p>
+                <p class="language-content arabic">جامعة الحسن مؤسسة إسلامية تعليمية رائدة مكرسة لحفظ وتعليم القرآن الكريم والعلوم الإسلامية. تأسست عام 2015، وقد كانت مدرستنا تخدم المجتمع المسلم بتميز في التعليم الإسلامي.</p>
+                
+                <p class="language-content english active">We offer comprehensive programs in Quran memorization (Hifz), Islamic jurisprudence (Fiqh), Hadith studies, Arabic language, and other essential Islamic sciences under the guidance of qualified scholars.</p>
+                <p class="language-content urdu">ہم قرآن کریم کے حفظ (حفظ)، اسلامی فقہ، حدیث کے علوم، عربی زبان اور دیگر ضروری اسلامی علوم میں ماہر علماء کی رہنمائی میں جامع پروگرام پیش کرتے ہیں۔</p>
+                <p class="language-content arabic">نقدم برامج شاملة في حفظ القرآن (حفظ)، الفقه الإسلامي، دراسات الحديث، اللغة العربية والعلوم الإسلامية الأساسية الأخرى تحت إشراف علماء مؤهلين.</p>
+            </div>
+            <div class="about-image">
+                <img src="https://images.pexels.com/photos/1883409/pexels-photo-1883409.jpeg" alt="Madrasa Building">
+            </div>
+        </div>
+    </section>
+    
+    <!-- Programs Section -->
+    <section id="programs" class="fade-in">
+        <div class="section-title">
+            <h2 class="language-content english active">Our Programs</h2>
+            <h2 class="language-content urdu">ہمارے پروگرامز</h2>
+            <h2 class="language-content arabic">برامجنا</h2>
+        </div>
+        <div class="programs-container">
+            <div class="program-card">
+                <div class="program-image">
+                    <img src="https://images.unsplash.com/photo-1596125160970-6f02eeba00d3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHF1cmFufGVufDB8fDB8fHww" alt="Hifz Program">
+                </div>
+                <div class="program-content">
+                    <h3 class="language-content english active">Hifz-e-Quran</h3>
+                    <h3 class="language-content urdu">حفظ قرآن</h3>
+                    <h3 class="language-content arabic">حفظ القرآن</h3>
+                    <p class="language-content english active">Complete memorization of the Holy Quran with proper Tajweed rules and recitation practice.</p>
+                    <p class="language-content urdu">قرآن پاک کو تجوید کے ساتھ مکمل حفظ کرنے کا پروگرام</p>
+                    <p class="language-content arabic">حفظ القرآن الكريم كاملاً مع أحكام التجويد وتطبيق التلاوة</p>
+                    <a href="#contact" class="program-link language-content english active">
+                    Learn More <i class="fas fa-arrow-right"></i></a>
+
+                    <a href="#contact" class="program-link language-content urdu">
+                   مزید جانیں <i class="fas fa-arrow-left"></i></a>
+
+                    <a href="#contact" class="program-link language-content arabic">
+                    المزيد <i class="fas fa-arrow-left"></i></a>
+
+                </div>
+            </div>
+            
+            <div class="program-card">
+                <div class="program-image">
+                    <img src="https://cdn.pixabay.com/photo/2020/03/20/15/59/quran-4951034_1280.jpg" alt="Alim Course">
+                </div>
+                <div class="program-content">
+                    <h3 class="language-content english active">Alim-e-Deen Course</h3>
+                    <h3 class="language-content urdu">عالم دین کورس</h3>
+                    <h3 class="language-content arabic">دورة عالم الدين</h3>
+                    <p class="language-content english active">Comprehensive Islamic studies program covering Tafsir, Hadith, Fiqh, Arabic and more.</p>
+                    <p class="language-content urdu">تفاسیر، حدیث، فقہ، عربی اور دیگر اسلامی علوم کا جامع کورس</p>
+                    <p class="language-content arabic">برنامج شامل للدراسات الإسلامية يشمل التفسير والحديث والفقه والعربية وغيرها</p>
+                    <a href="#contact" class="program-link language-content english active">
+                    Learn More <i class="fas fa-arrow-right"></i></a>
+
+                    <a href="#contact" class="program-link language-content urdu">
+                   مزید جانیں <i class="fas fa-arrow-left"></i></a>
+
+                    <a href="#contact" class="program-link language-content arabic">
+                    المزيد <i class="fas fa-arrow-left"></i></a>
+
+                </div>
+            </div>
+            
+            <div class="program-card">
+                <div class="program-image">
+                    <img src="https://www.shutterstock.com/image-photo/hand-writing-on-blackboard-language-600nw-480440053.jpg" alt="Arabic Program">
+                </div>
+                <div class="program-content">
+                    <h3 class="language-content english active">Arabic Language</h3>
+                    <h3 class="language-content urdu">عربی زبان</h3>
+                    <h3 class="language-content arabic">اللغة العربية</h3>
+                    <p class="language-content english active">Master the Arabic language to understand Quran and Hadith in their original form.</p>
+                    <p class="language-content urdu">قرآن اور حدیث کو اصل زبان میں سمجھنے کے لیے عربی زبان سیکھیں</p>
+                    <p class="language-content arabic">إتقان اللغة العربية لفهم القرآن والحديث بلغتهما الأصلية</p>
+                    <a href="#contact" class="program-link language-content english active">
+                    Learn More <i class="fas fa-arrow-right"></i></a>
+
+                    <a href="#contact" class="program-link language-content urdu">
+                   مزید جانیں <i class="fas fa-arrow-left"></i></a>
+
+                    <a href="#contact" class="program-link language-content arabic">
+                    المزيد <i class="fas fa-arrow-left"></i></a>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section id="features" class="fade-in">
+        <div class="section-title">
+            <h2 class="language-content english active">Our Features</h2>
+            <h2 class="language-content urdu">ہماری خصوصیات</h2>
+            <h2 class="language-content arabic">مميزاتنا</h2>
+        </div>
+        <div class="features-container">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-quran"></i>
+                </div>
+                <h3 class="language-content english active">Quranic Education</h3>
+                <h3 class="language-content urdu">قرآنی تعلیم</h3>
+                <h3 class="language-content arabic">التعليم القرآني</h3>
+                <p class="language-content english active">Comprehensive Quran teaching with Tajweed and Tafsir for all age groups.</p>
+                <p class="language-content urdu">تجوید اور تفسیر کے ساتھ تمام عمر کے گروپس کے لیے جامع قرآن کی تعلیم</p>
+                <p class="language-content arabic">تعليم القرآن الكريم مع التجويد والتفسير لجميع الفئات العمرية</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <h3 class="language-content english active">Qualified Teachers</h3>
+                <h3 class="language-content urdu">قابل اساتذہ</h3>
+                <h3 class="language-content arabic">معلمون مؤهلون</h3>
+                <p class="language-content english active">Learn from certified Islamic scholars with years of teaching experience.</p>
+                <p class="language-content urdu">سرٹیفائیڈ اسلامی علماء سے سیکھیں جن کے پاس سالوں کا تدریسی تجربہ ہے</p>
+                <p class="language-content arabic">تعلم من علماء إسلاميين معتمدين لديهم سنوات من الخبرة التدريسية</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-mosque"></i>
+                </div>
+                <h3 class="language-content english active">Islamic Environment</h3>
+                <h3 class="language-content urdu">اسلامی ماحول</h3>
+                <h3 class="language-content arabic">بيئة إسلامية</h3>
+                <p class="language-content english active">Spiritual atmosphere that nurtures Islamic values and character.</p>
+                <p class="language-content urdu">روحانی ماحول جو اسلامی اقدار اور کردار کو پروان چڑھاتا ہے</p>
+                <p class="language-content arabic">جو روحي يعزز القيم الإسلامية والسلوك</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-book-open"></i>
+                </div>
+                <h3 class="language-content english active">Comprehensive Curriculum</h3>
+                <h3 class="language-content urdu">جامع نصاب</h3>
+                <h3 class="language-content arabic">منهج شامل</h3>
+                <p class="language-content english active">Well-structured courses covering all essential Islamic sciences.</p>
+                <p class="language-content urdu">اچھی طرح سے ساختہ کورسز جو تمام ضروری اسلامی علوم کا احاطہ کرتے ہیں</p>
+                <p class="language-content arabic">دورات منظمة تغطي جميع العلوم الإسلامية الأساسية</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Gallery Section -->
+    <section id="gallery" class="fade-in">
+        <div class="section-title">
+            <h2 class="language-content english active">Gallery</h2>
+            <h2 class="language-content urdu">گیلری</h2>
+            <h2 class="language-content arabic">معرض الصور</h2>
+        </div>
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <img src="https://static.dw.com/image/58092366_604.jpg" alt="Madrasa Class">
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="" alt="Quran Class">
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1566669437686-c2b5d0a64b0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Islamic Studies">
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1566669437686-c2b5d0a64b0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Arabic Class">
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1566669437688-c2b5d0a64b0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Prayer Time">
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1566669437689-c2b5d0a64b0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Graduation">
+                <div class="gallery-overlay">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="fade-in">
+        <div class="section-title">
+            <h2 class="language-content english active">Contact Us</h2>
+            <h2 class="language-content urdu">رابطہ کریں</h2>
+            <h2 class="language-content arabic">اتصل بنا</h2>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3 class="language-content english active">Get in Touch</h3>
+                <h3 class="language-content urdu">ہم سے رابطہ کریں</h3>
+                <h3 class="language-content arabic">تواصل معنا</h3>
+                
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <p class="language-content english active">123 Islamic Street, Madina Town, Lahore, Pakistan</p>
+                            <p class="language-content urdu">123 اسلامی سٹریٹ، مدینہ ٹاؤن، لاہور، پاکستان</p>
+                            <p class="language-content arabic">123 شارع الإسلام، مدينة المدينة، لاهور، باكستان</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                      <i class="fas fa-phone-alt"></i>
+                   <div>
+                  <p>+92 300 1234567</p>
+                </div>
+              </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <p>info@jamiatulhassan.edu.pk</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <p class="language-content english active">Thusday - Friday: 8:00 AM - 5:00 PM</p>
+                            <p class="language-content urdu">ہفتہ سے جمعرات: صبح 8 بجے سے شام 5 بجے تک</p>
+                            <p class="language-content arabic">السبت - الخميس: 8 صباحًا - 5 مساءً</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="social-links">
+                    <h4 class="language-content english active">Follow Us</h4>
+                    <h4 class="language-content urdu">ہمیں فالو کریں</h4>
+                    <h4 class="language-content arabic">تابعنا</h4>
+                    
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <h3 class="language-content english active">Send Us a Message</h3>
+                <h3 class="language-content urdu">ہمیں پیغام بھیجیں</h3>
+                <h3 class="language-content arabic">أرسل لنا رسالة</h3>
+                
+                <form>
+                    <div class="form-group">
+                        <label for="name" class="language-content english active">Name</label>
+                        <label for="name" class="language-content urdu">نام</label>
+                        <label for="name" class="language-content arabic">الاسم</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="language-content english active">Email</label>
+                        <label for="email" class="language-content urdu">ای میل</label>
+                        <label for="email" class="language-content arabic">البريد الإلكتروني</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" class="language-content english active">Phone</label>
+                        <label for="phone" class="language-content urdu">فون</label>
+                        <label for="phone" class="language-content arabic">الهاتف</label>
+                        <input type="tel" id="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="language-content english active">Message</label>
+                        <label for="message" class="language-content urdu">پیغام</label>
+                        <label for="message" class="language-content arabic">الرسالة</label>
+                        <textarea id="message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn language-content english active">Send Message</button>
+                    <button type="submit" class="submit-btn language-content urdu">پیغام بھیجیں</button>
+                    <button type="submit" class="submit-btn language-content arabic">إرسال الرسالة</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3 class="language-content english active">Jamia Tul Hassan</h3>
+                <h3 class="language-content urdu">جامعۃ الحسن</h3>
+                <h3 class="language-content arabic">جامعة الحسن</h3>
+                <p class="language-content english active">A premier Islamic educational institution dedicated to preserving and teaching the Holy Quran and authentic Islamic knowledge.</p>
+                <p class="language-content urdu">قرآن پاک اور مستند اسلامی علم کے تحفظ اور تعلیم کے لیے وقف ایک معیاری اسلامی تعلیمی ادارہ۔</p>
+                <p class="language-content arabic">مؤسسة تعليمية إسلامية رائدة مكرسة لحفظ وتعليم القرآن الكريم والمعرفة الإسلامية الأصيلة.</p>
+            </div>
+            
+            <div class="footer-col">
+                <h3 class="language-content english active">Quick Links</h3>
+                <h3 class="language-content urdu">فوری لنکس</h3>
+                <h3 class="language-content arabic">روابط سريعة</h3>
+                <ul class="footer-links">
+                    <li><a href="#home" class="language-content english active">Home</a><a href="#home" class="language-content urdu">ہوم</a><a href="#home" class="language-content arabic">الرئيسية</a></li>
+                    <li><a href="#about" class="language-content english active">About</a><a href="#about" class="language-content urdu">تعارف</a><a href="#about" class="language-content arabic">عن المدرسة</a></li>
+                    <li><a href="#programs" class="language-content english active">Programs</a><a href="#programs" class="language-content urdu">پروگرامز</a><a href="#programs" class="language-content arabic">البرامج</a></li>
+                    <li><a href="#gallery" class="language-content english active">Gallery</a><a href="#gallery" class="language-content urdu">گیلری</a><a href="#gallery" class="language-content arabic">معرض الصور</a></li>
+                    <li><a href="#contact" class="language-content english active">Contact</a><a href="#contact" class="language-content urdu">رابطہ</a><a href="#contact" class="language-content arabic">اتصل بنا</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3 class="language-content english active">Programs</h3>
+                <h3 class="language-content urdu">پروگرامز</h3>
+                <h3 class="language-content arabic">البرامج</h3>
+                <ul class="footer-links">
+                    <li><a href="#programs" class="language-content english active">Hifz-e-Quran</a><a href="#programs" class="language-content urdu">حفظ قرآن</a><a href="#programs" class="language-content arabic">حفظ القرآن</a></li>
+                    <li><a href="#programs" class="language-content english active">Alim-e-Deen Course</a><a href="#programs" class="language-content urdu">عالم دین کورس</a><a href="#programs" class="language-content arabic">دورة عالم الدين</a></li>
+                    <li><a href="#programs" class="language-content english active">Arabic Language</a><a href="#programs" class="language-content urdu">عربی زبان</a><a href="#programs" class="language-content arabic">اللغة العربية</a></li>
+                    <li><a href="#programs" class="language-content english active">Weekend Classes</a><a href="#programs" class="language-content urdu">ہفتہ وار کلاسز</a><a href="#programs" class="language-content arabic">فصول نهاية الأسبوع</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3 class="language-content english active">Contact Info</h3>
+                <h3 class="language-content urdu">رابطے کی معلومات</h3>
+                <h3 class="language-content arabic">معلومات الاتصال</h3>
+                <div class="footer-contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p class="language-content english active">123 Islamic Street, Lahore</p>
+                    <p class="language-content urdu">123 اسلامی سٹریٹ، لاہور</p>
+                    <p class="language-content arabic">123 شارع الإسلام، لاهور</p>
+                </div>
+                <div class="footer-contact-item">
+                <i class="fas fa-phone-alt"></i>
+
+                <!-- English -->
+                <p class="language-content english active">+92 300 1234567</p>
+
+                <!-- Urdu -->
+                <p class="language-content urdu" dir="ltr" style="text-align:right;">
+               +92 300 1234567
+                </p>
+
+            <!-- Arabic -->
+             <p class="language-content arabic" dir="ltr" style="text-align:right;">
+             +92 300 1234567
+            </p>
+               </div>
+
+                <div class="footer-contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>info@jamiatulhassan.edu.pk</p>
+                </div>
+                
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p class="language-content english active">&copy; 2025 Jamia Tul Hassan. All Rights Reserved.</p>
+            <p class="language-content urdu">© 2025 جامعۃ الحسن۔ تمام حقوق محفوظ ہیں۔</p>
+            <p class="language-content arabic">© 2025 جامعة الحسن. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const navLinks = document.getElementById('nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            
+            // Back to top button
+            if (window.scrollY > 300) {
+                document.getElementById('back-to-top').classList.add('active');
+            } else {
+                document.getElementById('back-to-top').classList.remove('active');
+            }
+        });
+        
+        // Back to top button
+        document.getElementById('back-to-top').addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                }
+            });
+        });
+        
+        // Scroll Animation
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const fadeInOnScroll = () => {
+            fadeElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('active');
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', fadeInOnScroll);
+        window.addEventListener('load', fadeInOnScroll);
+        
+        // Language Toggle - Corrected Version
+        document.addEventListener('DOMContentLoaded', function() {
+            const languageButtons = document.querySelectorAll('.language-btn');
+            
+            // Set initial language (English)
+            document.documentElement.lang = 'en';
+            document.documentElement.dir = 'ltr';
+            
+            // Hide all language content except English
+            document.querySelectorAll('.language-content').forEach(content => {
+                if (!content.classList.contains('english')) {
+                    content.style.display = 'none';
+                }
+            });
+            
+            languageButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    languageButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Get selected language
+                    const selectedLang = this.getAttribute('data-lang');
+                    
+                    // Set HTML lang and dir attributes
+                    document.documentElement.lang = selectedLang === 'arabic' ? 'ar' : 
+                                                   selectedLang === 'urdu' ? 'ur' : 'en';
+                    
+                    // Change text direction for Arabic/Urdu
+                    if (selectedLang === 'arabic' || selectedLang === 'urdu') {
+                        document.documentElement.dir = 'rtl';
+                    } else {
+                        document.documentElement.dir = 'ltr';
+                    }
+                    
+                    // Hide all language content
+                    document.querySelectorAll('.language-content').forEach(content => {
+                        content.style.display = 'none';
+                    });
+                    
+                    // Show selected language content
+                    document.querySelectorAll(`.language-content.${selectedLang}`).forEach(content => {
+                        content.style.display = 'block';
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
