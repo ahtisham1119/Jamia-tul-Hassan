@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -137,8 +138,10 @@
             border: 3px solid var(--accent-color);
             animation: pulse 3s infinite ease-in-out;
             backdrop-filter: blur(5px);
+            padding: 10px; /* Add padding for logo */
         }
-        
+
+
         @keyframes pulse {
             0%, 100% {
                 transform: scale(1);
@@ -146,13 +149,16 @@
             }
             50% {
                 transform: scale(1.05);
-                box-shadow: 0 0 0 15px rgba(212, 175, 55, 0);
+                box-shadow: 0 0 0 10px rgba(212, 175, 55, 0);
             }
         }
-        
-        .logo i {
-            font-size: 3.5rem;
-            color: var(--accent-color);
+
+        /* Header Logo Image */
+       .header-logo-img {
+           width: 120%; /* Fill the logo container */
+           height: 120%;
+           object-fit: contain; /* Maintain aspect ratio */
+           border-radius: 50%;
         }
         
         h1 {
@@ -200,6 +206,7 @@
             z-index: 999;
             transition: all var(--transition-speed) ease;
             backdrop-filter: blur(5px);
+            height: 70px !important; /* FIXED HEIGHT */
         }
         
         nav.scrolled {
@@ -214,6 +221,7 @@
             padding: 15px 5%;
             max-width: 1400px;
             margin: 0 auto;
+            height: 70px; /* CONTAINER HEIGHT */
         }
         
         .nav-logo {
@@ -225,6 +233,44 @@
             align-items: center;
             gap: 10px;
         }
+
+        /* Navbar Logo Styling - FIXED SIZE */
+        .nav-logo-img {
+           width: 60px;
+           height: 60px;
+           object-fit: contain;
+           margin-right: 12px;
+           border-radius: 5px;
+           vertical-align: middle;
+       }
+
+     /* Responsive - Mobile view */
+     @media (max-width: 768px) {
+     .nav-logo-img {
+        width: 40px;
+        height: 40px;
+        margin-right: 8px;
+      }
+   }
+
+    /* Header Logo Styling */
+   .header-logo-img {
+       width: 100px;
+       height: 100px;
+       object-fit: contain;
+       border-radius: 50%;
+       border: 3px solid var(--accent-color);
+       background-color: rgba(255, 255, 255, 0.1);
+       animation: pulse 3s infinite ease-in-out;
+       backdrop-filter: blur(5px);
+   }
+
+    /* Mobile adjustments for fixed navbar */
+   @media (max-width: 992px) {
+     .nav-links {
+       top: 70px; /* Navbar height ke equal */
+      }
+  }
         
         .nav-logo i {
             color: var(--accent-color);
@@ -1020,7 +1066,15 @@
     <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-container">
-            <a href="#home" class="nav-logo"><i class="fas fa-mosque"></i> <span class="language-content english active">Jamia Tul Hassan</span><span class="language-content urdu">جامعۃ الحسن</span><span class="language-content arabic">جامعة الحسن</span></a>
+            <a href="#home" class="nav-logo">
+            <!-- Mosque icon ki jagah apna logo -->
+            <img src="https://res.cloudinary.com/drm3havhu/image/upload/v1764935350/favicon_fsmpor.png" 
+                 alt="Jamia Tul Hassan Logo" 
+                 class="nav-logo-img">
+            <span class="language-content english active">Jamia Tul Hassan</span>
+            <span class="language-content urdu">جامعۃ الحسن</span>
+            <span class="language-content arabic">جامعة الحسن</span>
+        </a>
             <button class="mobile-menu-btn" id="mobile-menu-btn">
                 <i class="fas fa-bars"></i>
             </button>
@@ -1038,8 +1092,10 @@
     <!-- Header -->
     <header id="home">
         <div class="header-content">
-            <div class="logo">
-                <i class="fas fa-mosque"></i>
+             <div class="logo">
+            <img src="https://res.cloudinary.com/drm3havhu/image/upload/v1764935350/favicon_fsmpor.png" 
+                 alt="Jamia Tul Hassan Logo" 
+                 class="header-logo-img">
             </div>
             <h1 class="language-content english active">Jamia Tul Hassan</h1>
             <h1 class="language-content urdu">جامعۃ الحسن</h1>
