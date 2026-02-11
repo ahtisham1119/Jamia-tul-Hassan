@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>جامعۃ الحسن - Jamia Tul Hassan</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Gulzar:wght@400;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Fonts - Updated with Arabic font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gulzar:wght@400;700&family=Amiri:wght@400;700&family=Harmattan:wght@400;500;600;700&display=swap" rel="stylesheet">
     
      <!-- ====== CURRENT FAVICON ====== -->
     <link rel="icon" type="image/png" href="/favicon.png" />
@@ -28,6 +31,7 @@
             box-sizing: border-box;
         }
         
+        /* Base font for English & Urdu */
         body {
             font-family: 'Gulzar', 'Amiri', serif;
             color: var(--text-color);
@@ -37,6 +41,43 @@
             transition: all 0.3s ease;
         }
         
+        /* Arabic-specific font rules */
+        html[lang="ar"] body,
+        .language-content.arabic {
+            font-family: 'Harmattan', 'Amiri', serif;
+            font-size: 1.2em; /* Slightly larger for better readability */
+        }
+        
+        /* Language buttons - Arabic font */
+        html[lang="ar"] .language-btn {
+            font-family: 'Harmattan', sans-serif;
+        }
+        
+        /* Ensure proper font for Arabic text in all elements */
+        html[lang="ar"] h1,
+        html[lang="ar"] h2,
+        html[lang="ar"] h3,
+        html[lang="ar"] h4,
+        html[lang="ar"] p,
+        html[lang="ar"] a,
+        html[lang="ar"] span,
+        html[lang="ar"] li,
+        html[lang="ar"] button,
+        html[lang="ar"] input,
+        html[lang="ar"] textarea,
+        html[lang="ar"] label {
+            font-family: 'Harmattan', 'Amiri', serif !important;
+        }
+        
+        /* Urdu keeps Gulzar, English keeps Amiri as fallback */
+        html[lang="ur"] body {
+            font-family: 'Gulzar', 'Amiri', serif;
+        }
+        
+        html[lang="en"] body {
+            font-family: 'Amiri', serif;
+        }
+
 /* Language Toggle - Adjusted Position */
 .language-toggle {
     position: fixed;
@@ -939,6 +980,11 @@
             
             .contact-container {
                 flex-direction: column;
+            }
+            
+            /* Responsive Arabic font size */
+            html[lang="ar"] body {
+                font-size: 1.05em;
             }
         }
         
