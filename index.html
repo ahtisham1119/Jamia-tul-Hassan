@@ -8,7 +8,7 @@
     <!-- Fonts - Updated with Arabic font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gulzar:wght@400;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
     
      <!-- ====== CURRENT FAVICON ====== -->
     <link rel="icon" type="image/png" href="/favicon.png" />
@@ -33,85 +33,55 @@
         
         /* Base font for English & Urdu */
         body {
-            font-family: 'AA Sameer Kelk Regular.ttf', 'Amiri', 'Jameel Noori Nastaleeq.ttf', serif;
+            font-family: 'Gulzar', 'Amiri', serif;
             color: var(--text-color);
             background-color: var(--secondary-color);
             overflow-x: hidden;
             line-height: 1.8;
             transition: all 0.3s ease;
         }
-        /* === UPLOADED FONTS - ARABIC & URDU === */
+        
+       /* ARABIC FONT - UPLOADED FILE */
 @font-face {
-    font-family: 'Jameel Noori';
-    src: url('Jameel Noori Nastaleeq.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Sameer Kelk';
+    font-family: 'SameerKelk';
     src: url('AA Sameer Kelk Regular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
 }
-        /* === URDU - JAMEEL NOORI (GULZAR KI JAGAH) === */
-html[lang="ur"] body,
-.language-content.urdu,
-html[lang="ur"] p,
-html[lang="ur"] h1,
-html[lang="ur"] h2,
-html[lang="ur"] h3,
-html[lang="ur"] a,
-html[lang="ur"] button,
-html[lang="ur"] span,
-html[lang="ur"] .nav-links,
-html[lang="ur"] .nav-logo {
-    font-family: 'Jameel Noori', serif;
-    font-size: 18px;
-    line-height: 1.8; 
-    /* === ALL HEADINGS === */
-h1 { font-size: 48px !important; }
-h2 { font-size: 36px !important; }
-h3 { font-size: 24px !important; }
-h4 { font-size: 20px !important; }
-   }
 
-/* === ARABIC - SAMEER KELK (GULZAR WALA SIZE) === */
+/* ARABIC LANGUAGE */
 html[lang="ar"] body,
-.language-content.arabic,
+.language-content.arabic {
+    font-family: 'SameerKelk', 'Amiri', serif;
+}
+        /* === عربی کا لائٹ ٹیکسٹ === */
+html[lang="ar"] body,
 html[lang="ar"] p,
+html[lang="ar"] .about-text,
+html[lang="ar"] .program-content,
+html[lang="ar"] .feature-card,
+html[lang="ar"] .contact-info,
+html[lang="ar"] .footer-col {
+
+}
+
+/* ہیڈنگز ویسے ہی رہیں (bold) */
 html[lang="ar"] h1,
 html[lang="ar"] h2,
 html[lang="ar"] h3,
-html[lang="ar"] a,
-html[lang="ar"] button,
-html[lang="ar"] span,
-html[lang="ar"] .nav-links,
-html[lang="ar"] .nav-logo {
-    font-family: 'Sameer Kelk', serif;
-    font-size: 18px;      
-    line-height: 1.8;     
-    font-weight: normal;
-        /* === ALL HEADINGS === */
-h1 { font-size: 48px !important; }
-h2 { font-size: 36px !important; }
-h3 { font-size: 24px !important; }
-h4 { font-size: 20px !important; }
-      }
+html[lang="ar"] h4,
+html[lang="ar"] .section-title,
+html[lang="ar"] .cta-button,
+html[lang="ar"] .nav-links a {
 
-/* === ENGLISH - AMIRI === */
-html[lang="en"] body,
-.language-content.english {
-    font-family: 'Amiri', Georgia, serif;
-    font-size: 18px;
-    line-height: 1.8;
-        /* === ALL HEADINGS === */
-h1 { font-size: 48px !important; }
-h2 { font-size: 36px !important; }
-h3 { font-size: 24px !important; }
-h4 { font-size: 20px !important; }
-   }
-
+}
+        
+        /* Urdu keeps Gulzar, English keeps Amiri as fallback */
+        html[lang="ur"] body {
+            font-family: 'Gulzar', serif;
+        }
+        
+        html[lang="en"] body {
+            font-family: 'Amiri', serif;
+        }
 
 /* Language Toggle - Adjusted Position */
 .language-toggle {
