@@ -8,7 +8,7 @@
     <!-- Fonts - Updated with Arabic font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gulzar:wght@400;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
     
      <!-- ====== CURRENT FAVICON ====== -->
     <link rel="icon" type="image/png" href="/favicon.png" />
@@ -33,7 +33,7 @@
         
         /* Base font for English & Urdu */
         body {
-            font-family: 'Gulzar', 'Amiri', 'Harmattan', serif;
+            font-family: 'Amiri', 'Harmattan', serif;
             color: var(--text-color);
             background-color: var(--secondary-color);
             overflow-x: hidden;
@@ -74,10 +74,37 @@ html[lang="ar"] .nav-links a {
     font-weight: 200 !important;     /* بولڈ */
 }
         
-        /* Urdu keeps Gulzar, English keeps Amiri as fallback */
-        html[lang="ur"] body {
-            font-family: 'Gulzar', serif;
-        }
+        /* اردو کسٹم فونٹ - بالکل ویسے جیسے عربی */
+@font-face {
+    font-family: 'Jameel Noori Nastaleeq Kasheeda';
+    src: url('Jameel Noori Nastaleeq Kasheeda.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; /* پرفارمنس کے لیے */
+}
+
+/* اردو زبان کے لیے */
+html[lang="ur"] body,
+html[lang="ur"] p,
+html[lang="ur"] .about-text,
+html[lang="ur"] .program-content,
+html[lang="ur"] .feature-card,
+html[lang="ur"] .contact-info,
+html[lang="ur"] .footer-col,
+html[lang="ur"] .nav-links a,
+html[lang="ur"] .cta-button,
+html[lang="ur"] .section-title h2,
+html[lang="ur"] h1, 
+html[lang="ur"] h2, 
+html[lang="ur"] h3, 
+html[lang="ur"] h4,
+html[lang="ur"] .program-link,
+html[lang="ur"] .submit-btn,
+html[lang="ur"] label {
+    font-family: 'Jameel Noori Nastaleeq Kasheeda', 'Gulzar', serif;
+}
+
+/* گوگل فانٹس سے Gulzar ہٹا دیں - اب ضرورت نہیں */
         
         html[lang="en"] body {
             font-family: 'Amiri', serif;
