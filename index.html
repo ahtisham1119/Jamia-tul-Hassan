@@ -80,7 +80,7 @@ html[lang="ar"] .nav-links a {
     src: url('Jameel Noori Nastaleeq Kasheeda.ttf') format('truetype');
 }
 
-/* اردو زبان کے لیے */
+/* اردو زبان کے لیے - فونٹ + سائز */
 html[lang="ur"] body,
 html[lang="ur"] p,
 html[lang="ur"] .about-text,
@@ -98,11 +98,51 @@ html[lang="ur"] h4,
 html[lang="ur"] .program-link,
 html[lang="ur"] .submit-btn,
 html[lang="ur"] label {
-    font-size: 1.3em;
     font-family: 'Jameel Noori Nastaleeq Kasheeda', serif;
+    font-size: 1.2em;  /* یہ سائز بڑھائے گا */
+    line-height: 1.9;   /* لائنوں کے درمیان فاصلہ */
 }
 
-/* گوگل فانٹس سے Gulzar ہٹا دیں - اب ضرورت نہیں */
+/* صرف ہیڈنگز تھوڑی اور بڑی */
+html[lang="ur"] h1 {
+    font-size: 3.5rem;
+}
+
+html[lang="ur"] h2 {
+    font-size: 2.5rem;
+}
+
+html[lang="ur"] h3 {
+    font-size: 1.8rem;
+}
+
+/* موبائل کے لیے تھوڑا چھوٹا */
+@media (max-width: 768px) {
+    html[lang="ur"] body,
+    html[lang="ur"] p,
+    html[lang="ur"] .about-text,
+    html[lang="ur"] .program-content,
+    html[lang="ur"] .feature-card,
+    html[lang="ur"] .contact-info,
+    html[lang="ur"] .footer-col,
+    html[lang="ur"] .nav-links a,
+    html[lang="ur"] .cta-button,
+    html[lang="ur"] .section-title h2,
+    html[lang="ur"] .program-link,
+    html[lang="ur"] .submit-btn,
+    html[lang="ur"] label {
+        font-size: 1.2em;
+    }
+    
+    html[lang="ur"] h1 {
+        font-size: 2.5rem;
+    }
+    
+    html[lang="ur"] h2 {
+        font-size: 2rem;
+    }
+}
+
         
         html[lang="en"] body {
             font-family: 'Amiri', serif;
